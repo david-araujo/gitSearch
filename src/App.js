@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown, Card, Icon, Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 
 function App() {
@@ -28,7 +28,6 @@ function App() {
   
   const getRepositories = useCallback(
     async () => {
-      console.log(typeof language)
       const response = await fetch(`https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&page=${pageNum}`)
       const data = await response.json();
 
@@ -62,15 +61,40 @@ function App() {
           }
         } 
       />
-      <ul>
+      <div className="buttonGroup">
+        {
+          (repositories.length < 30 && pageNum < 2) || pageNum < 2 ? null : 
+            <Button animated onClick = {() => setPageNum(pageNum - 1)}>
+              <Button.Content visible>PREV</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow left' />
+              </Button.Content>
+            </Button>
+        }
+        {
+          (repositories.length < 30) ? null :
+            <Button animated onClick = {() => setPageNum(pageNum + 1)}>
+              <Button.Content visible>NEXT</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow right' />
+              </Button.Content>
+            </Button>
+        } 
+      </div>
+      <Card.Group className = 'cardGroup'>
         {repositories.map(repo => (
-          <li key = {repo.id}>
-            {repo.name}
-          </li>
+          <Card key = {repo.id} href = {repo.html_url} target = '_blank'>
+            <Card.Content header = {repo.name} />
+            <Card.Content meta = {repo.full_name} />
+            <Card.Content description = {`Owner: ${repo.owner.login}`} />
+            <Card.Content extra>
+              <Icon name='user' /> {repo.watchers_count}
+              <Icon name='star' />{repo.stargazers_count} 
+              <Icon name='fork' />{repo.forks} 
+            </Card.Content>
+          </Card>
         ))}
-      </ul>
-      {(repositories.length < 30 && pageNum < 2) || pageNum < 2 ? null : <button onClick = {() => setPageNum(pageNum - 1)}>PREV</button> }
-      {(repositories.length < 30) ? null : <button onClick = {() => setPageNum(pageNum + 1)}>NEXT</button> }
+      </Card.Group>
     </section>
     <Footer />
     </>

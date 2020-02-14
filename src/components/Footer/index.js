@@ -5,6 +5,6 @@ export default () => {
     const year = new Date().getFullYear()
 
     return <footer>
-                <p>David Araujo - Fullstack Developer <span>{year}</span></p>
+                <p><strong>David Araujo</strong> - Fullstack Developer <span>{year}</span></p>
             </footer>
 }

@@ -1,0 +1,15 @@
+Footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;    
+    background: rgb(204,204,204);
+    background: -moz-linear-gradient(90deg, rgba(204,204,204,1) 0%, rgba(2,0,36,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(204,204,204,1) 0%, rgba(2,0,36,1) 100%);
+    background: linear-gradient(90deg, rgba(204,204,204,1) 0%, rgba(2,0,36,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc",endColorstr="#020024",GradientType=1);
+}
+
+Footer p {
+    padding: 20px;
+    color: #000;
+}

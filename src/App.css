@@ -1,0 +1,13 @@
+.ui.cards {
+    padding: 0px 0px 60px 20px;
+}
+.ui.search{
+    left: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonGroup {
+    position: relative;
+    left: 20px;
+    margin-bottom: 10px;
+}
