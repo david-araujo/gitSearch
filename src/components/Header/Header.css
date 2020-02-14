@@ -1,0 +1,13 @@
+Header {
+    background: rgb(2,0,36);
+    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 100%, rgba(85,0,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 100%, rgba(85,0,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 100%, rgba(85,0,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#5500ff",GradientType=1);
+}
+
+Header h1 {
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}

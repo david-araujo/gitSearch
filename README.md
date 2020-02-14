@@ -3,7 +3,7 @@ This project is an example how to use [React Hooks](https://reactjs.org/docs/hoo
 Basically contains:
 * A dropdown: That you can search for an expecific Program language. This will return 30 itens per page.
 * Next and Prev Buttons: That will go to the next or back to previous page.
-
+* Styled with [Ract Semantic UI](https://react.semantic-ui.com/usage).
 
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

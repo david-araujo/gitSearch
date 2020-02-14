@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Card from './components/Card';
+import Footer from './components/Footer';
+import 'semantic-ui-css/semantic.min.css';
 
 function App() {
   
@@ -36,7 +37,9 @@ function App() {
 
 
   return (
-    <div className="App">
+    <>
+    <Header />
+    <section className="App">      
       <select onChange = {(e) => {setLanguage(e.target.value); setPageNum(1)}}>
         <option value = ''>Selecione uma Linguagem</option>
         {languages.map(lang => (
@@ -50,7 +53,9 @@ function App() {
       </ul>
       {(repositories.length < 30 && pageNum < 2) || pageNum < 2 ? null : <button onClick = {() => setPageNum(pageNum - 1)}>PREV</button> }
       {(repositories.length < 30) ? null : <button onClick = {() => setPageNum(pageNum + 1)}>NEXT</button> }
-    </div>
+    </section>
+    <Footer />
+    </>
   );
 }
 
