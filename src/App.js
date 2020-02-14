@@ -48,8 +48,8 @@ function App() {
           <li key = {repo.id}>{repo.name}</li>
         ))}
       </ul>
-      <button onClick = {() => setPageNum(pageNum - 1)}>PREV</button>
-      <button onClick = {() => setPageNum(pageNum + 1)}>NEXT</button>
+      {(repositories.length < 30 && pageNum < 2) || pageNum < 2 ? null : <button onClick = {() => setPageNum(pageNum - 1)}>PREV</button> }
+      {(repositories.length < 30) ? null : <button onClick = {() => setPageNum(pageNum + 1)}>NEXT</button> }
     </div>
   );
 }
